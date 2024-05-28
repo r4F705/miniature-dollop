@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: miniature-dollop
-        image: raftos18/miniature-dollop 
+        image: raftos18/miniature-dollop:0.1
         ports:
         - name: miniature-dollop
           containerPort: 4000 
