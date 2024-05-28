@@ -1,0 +1,3 @@
+resources:
+- base/miniature-dollop-dep.yaml
+- base/miniature-dollop-svc.yaml

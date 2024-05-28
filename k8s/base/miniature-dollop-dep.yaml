@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniature-dollop
+  labels:
+    name: miniature-dollop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: miniature-dollop
+  template:
+    metadata:
+      labels:
+        name: miniature-dollop
+    spec:
+      containers:
+      - name: miniature-dollop
+        image: raftos18/miniature-dollop 
+        ports:
+        - name: miniature-dollop
+          containerPort: 4000 
