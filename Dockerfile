@@ -1,5 +1,5 @@
 # Start from a Debian image with the latest version of Go installed
-FROM golang:1.22
+FROM golang:1.22 as builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
@@ -15,6 +15,14 @@ COPY . .
 
 # Build the Go app
 RUN go build -o main cmd/app/main.go
+
+# Start a new stage from scratch
+FROM debian:bullseye-slim
+
+WORKDIR /app
+
+# Copy the binary from builder stage
+COPY --from=builder /app/main /app/main
 
 # Expose port 4000 to the outside world
 EXPOSE 4000
