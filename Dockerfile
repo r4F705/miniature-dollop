@@ -1,5 +1,5 @@
 # Start from a Debian image with the latest version of Go installed
-FROM golang:1.22 as builder
+FROM golang:1.22-bullseye as builder
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
